@@ -31,6 +31,11 @@
     td{
         background-color: papayawhip;
     }
+
+    div{
+        display:inline-block;
+        background-color:aquamarine;
+    }
 </style>
 
 <body align="center">
@@ -45,7 +50,7 @@
     <!-- 입력받은 전체 텍스트 -->
     <h2 id="enterText">{{full}}</h2>
 
-    <table align="center">
+    <table class="cnt" align="center">
         <tr>
             <th colspan="2"><h2>단어 카운트</h2></th>
         </tr>
@@ -58,4 +63,15 @@
         </tr>
         {%endfor%}
     </table>
+
+    <br><br><br>
+
+    <div>
+        <h2>중복된 단어</h2>
+        {% for wordD, manyD in duplication %}
+            {%if manyD != 0%}
+                {{wordD}}<br>
+            {%endif%}
+        {%endfor%}
+    </div>
 </body>
